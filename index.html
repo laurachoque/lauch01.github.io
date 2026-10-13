@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Laura Letizia Choque Mamani">
+<meta property="og:description" content="Robótica y sistemas espaciales desde Bolivia. Investigadora principal de SALT y miembro de WaskiriSat-1.">
+<meta property="og:image" content="img/rover-laura.jpg">
+<title>Laura Choque Mamani</title>
+<meta name="description" content="Laura Letizia Choque Mamani: ingeniera mecatrónica en formación, investigadora principal de SALT y miembro de WaskiriSat-1. Robótica y sistemas espaciales desde Bolivia.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+/* Layout: perfil académico claro; encabezado con retrato, banda fotográfica del Salar, secciones con etiqueta al margen */
+:root {
+  --bg: #FBFBFA;
+  --surface: #FFFFFF;
+  --ink: #16191D;
+  --muted: #5F6670;
+  --rule: #E3E5E8;
+  --accent: #1E4C7A;
+  --accent-soft: #EDF2F7;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--serif); font-size: 1.1rem; line-height: 1.65;
+  padding-inline: 20px; padding-block: 0 72px;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1000px; margin: 0 auto; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Navegación */
+nav.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: rgba(251, 251, 250, .94); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+  margin-inline: -20px; padding: 12px 20px;
+}
+nav.top .in { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+nav.top .mark { font-family: var(--sans); font-weight: 700; font-size: .95rem; color: var(--ink); text-decoration: none; }
+nav.top ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; }
+nav.top a.l { font-family: var(--sans); font-size: .85rem; color: var(--muted); text-decoration: none; }
+nav.top a.l:hover { color: var(--accent); }
+@media (max-width: 700px) { nav.top ul { display: none; } }
+
+/* Encabezado */
+header { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 48px; align-items: center; padding-block: 64px 48px; }
+.eyebrow { font-family: var(--sans); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--sans); font-weight: 600; letter-spacing: -.025em; font-size: clamp(2.2rem, 5.5vw, 3.5rem); line-height: 1.05; margin: 14px 0 0; text-wrap: balance; }
+.summary { font-size: clamp(1.12rem, 2vw, 1.3rem); line-height: 1.5; max-width: 54ch; margin: 22px 0 0; }
+.meta { font-family: var(--sans); font-size: .9rem; color: var(--muted); margin-top: 18px; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 6px; }
+@media (max-width: 720px) {
+  header { grid-template-columns: 1fr; gap: 28px; padding-block: 40px 32px; }
+  .portrait { max-width: 220px; order: -1; aspect-ratio: 1; border-radius: 50%; }
+}
+
+/* Banda fotográfica */
+.band { margin: 0; }
+.band img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 55%; border-radius: 6px; }
+figcaption { font-family: var(--sans); font-size: .82rem; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+
+/* Cifras */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 40px; }
+.fact { padding: 18px 16px 18px 0; }
+.fact + .fact { padding-left: 16px; border-left: 1px solid var(--rule); }
+.fact .n { font-family: var(--sans); font-weight: 600; font-size: 1.6rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.fact .t { font-family: var(--sans); font-size: .82rem; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+@media (max-width: 720px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+  .fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .fact:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* Secciones */
+section { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 32px; padding-block: 56px; border-bottom: 1px solid var(--rule); scroll-margin-top: 60px; }
+.side { font-family: var(--sans); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-top: 6px; }
+.main { min-width: 0; }
+.main > p, .main > h2, .prose { max-width: 64ch; }
+h2 { font-family: var(--sans); font-weight: 600; font-size: 1.55rem; letter-spacing: -.015em; line-height: 1.25; margin: 0 0 18px; text-wrap: balance; }
+h3 { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; margin: 0; line-height: 1.35; }
+.main p { margin: 0 0 1em; }
+.sub { margin-top: 44px !important; }
+@media (max-width: 720px) { section { grid-template-columns: 1fr; gap: 10px; padding-block: 44px; } }
+
+/* Destacados */
+.highlights { list-style: none; margin: 0; padding: 0; max-width: 64ch; }
+.highlights li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--rule); }
+.highlights li:first-child { border-top: 0; padding-top: 0; }
+.yr { font-family: var(--sans); font-size: .85rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.highlights .d { font-size: 1rem; color: var(--muted); margin-top: 2px; }
+.status { display: inline-block; font-family: var(--sans); font-size: .72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: 1px 7px; margin-top: 6px; }
+
+/* Fotos dentro de secciones */
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 28px 0; }
+.pair figure, .single { margin: 0; }
+.pair img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+.single img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; }
+.single { margin: 28px 0; }
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } .pair img { aspect-ratio: 4 / 3; } }
+
+.quote { font-style: italic; font-size: 1.35rem; line-height: 1.45; color: var(--accent); border-left: 2px solid var(--accent); padding-left: 18px; margin: 28px 0; max-width: 52ch; }
+
+/* Proyectos */
+.projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.proj { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; }
+.proj .k { font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.proj p { margin: 8px 0 0; font-size: .98rem; line-height: 1.55; }
+.proj .r { font-family: var(--sans); font-size: .84rem; color: var(--accent); font-weight: 500; margin-top: auto; padding-top: 12px; }
+@media (max-width: 860px) { .projects { grid-template-columns: 1fr; } }
+
+/* Listas */
+.plain { list-style: none; margin: 0; padding: 0; max-width: 64ch; }
+.plain li { padding-block: 11px; border-top: 1px solid var(--rule); font-size: 1rem; }
+.plain li:first-child { border-top: 0; padding-top: 0; }
+.plain .s { font-family: var(--sans); font-size: .84rem; color: var(--muted); display: block; margin-top: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.tags li { font-family: var(--sans); font-size: .82rem; font-weight: 500; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; border: 0; }
+
+/* Divulgación */
+.reach { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; align-items: center; margin-bottom: 28px; }
+.reach .big { font-family: var(--sans); font-weight: 600; font-size: clamp(2.6rem, 6vw, 3.6rem); letter-spacing: -.03em; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.reach .lbl { font-family: var(--sans); font-size: .95rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.reach img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; }
+@media (max-width: 720px) { .reach { grid-template-columns: 1fr; } }
+
+/* Prensa */
+.press { list-style: none; margin: 0; padding: 0; max-width: 64ch; }
+.press li { padding-block: 14px; border-top: 1px solid var(--rule); }
+.press li:first-child { border-top: 0; padding-top: 0; }
+.press a { font-family: var(--sans); font-weight: 600; font-size: 1rem; text-decoration: none; color: var(--ink); }
+.press a:hover { color: var(--accent); text-decoration: underline; }
+.press .src { font-family: var(--sans); font-size: .82rem; color: var(--muted); margin-top: 3px; }
+.badge { display: inline-block; font-family: var(--sans); font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 1px 6px; margin-left: 8px; vertical-align: 2px; }
+
+footer { padding-block: 56px 0; }
+footer blockquote { margin: 0; font-family: var(--sans); font-weight: 600; font-size: clamp(1.3rem, 3vw, 1.85rem); line-height: 1.3; letter-spacing: -.015em; max-width: 32ch; text-wrap: balance; }
+footer .sig { font-family: var(--sans); font-size: .85rem; color: var(--muted); margin-top: 18px; }
+</style>
+</head>
+<body>
+
+
+<nav class="top" aria-label="Secciones">
+  <div class="in">
+    <a class="mark" href="#inicio">Laura Choque Mamani</a>
+    <ul>
+      <li><a class="l" href="#destacados">Destacados</a></li>
+      <li><a class="l" href="#liderazgo">Liderazgo</a></li>
+      <li><a class="l" href="#investigacion">Investigación</a></li>
+      <li><a class="l" href="#divulgacion">Divulgación</a></li>
+      <li><a class="l" href="#prensa">Prensa</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap" id="inicio">
+  <header>
+    <div>
+      <div class="eyebrow">Robótica · Sistemas espaciales · Bolivia</div>
+      <h1>Laura Letizia Choque Mamani</h1>
+      <p class="summary">Estudiante de Ingeniería Mecatrónica e investigadora. Lidero SALT, una misión análoga estudiantil en el Salar de Uyuni, y formo parte del equipo del nanosatélite WaskiriSat-1.</p>
+      <div class="meta">
+        <span>Universidad Católica Boliviana “San Pablo”</span>
+        <span>La Paz, Bolivia</span>
+      </div>
+    </div>
+    <img class="portrait" src="img/laura.jpg" alt="Retrato de Laura Choque Mamani">
+  </header>
+
+  <figure class="band">
+    <img src="img/dashboard-rover.jpg" alt="Tablet con el panel de telemetría del rover RUMIPI y el rover sobre el Salar de Uyuni al atardecer">
+    <figcaption>Panel de telemetría y rover RUMIPI en el Salar de Uyuni, esperando el protocolo go / no-go del centro de control. Agosto de 2026.</figcaption>
+  </figure>
+
+  <div class="facts">
+    <div class="fact"><div class="n">~6 000</div><div class="t">niños y jóvenes alcanzados con divulgación STEM del proyecto NASA HERC</div></div>
+    <div class="fact"><div class="n">2</div><div class="t">universidades bolivianas en el equipo SALT</div></div>
+    <div class="fact"><div class="n">IAC · AeroConf</div><div class="t">congresos internacionales de investigación</div></div>
+    <div class="fact"><div class="n">NASA</div><div class="t">HERC 2024, Most Improved Performance Award</div></div>
+  </div>
+
+  <section id="destacados">
+    <div class="side">Destacados</div>
+    <div class="main">
+      <ul class="highlights">
+        <li><div class="yr">2027</div><div><h3>Autora, IEEE Aerospace Conference 2027</h3><div class="d">Validación óptica Hardware-in-the-Loop de modelos de IA para imágenes satelitales (payload NINA).</div><span class="status">Abstract aceptado · artículo completo en revisión</span></div></li>
+        <li><div class="yr">2026</div><div><h3>Investigadora principal de SALT en SEA I Thalassa</h3><div class="d">Misión análoga de Southeast Analog (Georgia Tech), 8 al 18 de agosto. Telecontrol del rover RUMIPI desde el Salar de Uyuni con participantes internacionales.</div></div></li>
+        <li><div class="yr">2026</div><div><h3>Coautora, International Astronautical Congress (IAC)</h3><div class="d">Arquitectura y validación de la computadora de a bordo de WaskiriSat-1.</div></div></li>
+        <li><div class="yr">2025</div><div><h3>Delegada, 9th South American Space Generation Workshop (SGAC)</h3><div class="d">Lima, Perú, 28 y 29 de noviembre, en la Agencia Espacial del Perú (CONIDA). Trabajo en grupos temáticos y exposición de las conclusiones y recomendaciones del grupo.</div></div></li>
+        <li><div class="yr">2024</div><div><h3>NASA Human Exploration Rover Challenge, Most Improved Performance Award</h3><div class="d">Equipo VEMEC. Diseño y construcción del rover, y piloto en competencia. Reconocimiento posterior de la Presidencia del Senado de Bolivia.</div></div></li>
+        <li><div class="yr">2023</div><div><h3>Primer lugar, Rally Latinoamericano de Innovación</h3></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="liderazgo">
+    <div class="side">Liderazgo</div>
+    <div class="main">
+      <h2>SALT: llevar las misiones análogas al Salar de Uyuni</h2>
+      <p>La idea nació de una pregunta: ¿cómo podría Bolivia participar en las investigaciones internacionales de misiones espaciales análogas? La convocatoria de <a href="https://www.southeastanalog.org/mission" target="_blank" rel="noopener">Southeast Analog</a>, una iniciativa de estudiantes de Georgia Tech, fue la oportunidad de responderla.</p>
+      <p>Como investigadora principal (<em>Principal Investigator</em>) y líder del proyecto, formé SALT (Salar Autonomous Laboratory for Testing) con estudiantes de la Universidad Católica Boliviana y la Universidad Técnica de Oruro. Juntos desarrollamos <strong>RUMIPI</strong>, un rover teleoperado para pruebas en misiones análogas.</p>
+
+      <div class="pair">
+        <figure><img src="img/rover-laura.jpg" alt="Laura sostiene el rover RUMIPI junto al Salar de Uyuni"><figcaption>Con RUMIPI en el Salar de Uyuni.</figcaption></figure>
+        <figure><img src="img/salt-explica.jpg" alt="Laura explica la prueba del rover en el Salar, con conos de navegación detrás" style="object-position: 30% 50%"><figcaption>Explicando las pruebas de navegación de SALT.</figcaption></figure>
+      </div>
+
+      <p>Durante la misión SEA I Thalassa, en agosto de 2026, integramos el sistema a las operaciones de Southeast Analog como su Proyecto 01. Durante tres días de operación, astronautas análogos controlaron el rover en el Salar de Uyuni desde el interior del hábitat, junto a estudiantes vinculados a Georgia Tech. Llegar ahí exigió meses de preparación, coordinación de equipos, integración de sistemas y resolución de problemas técnicos. No todo funcionó como esperábamos, y cada falla nos enseñó algo.</p>
+      <p>El desafío mayor no fue tecnológico. Las misiones análogas son una disciplina poco conocida en Bolivia, y esa falta de visibilidad impide que más estudiantes descubran cómo participar y reconozcan el potencial científico de nuestro propio territorio.</p>
+      <p class="quote">Abrir esta puerta requirió mucho esfuerzo, y no quiero que vuelva a cerrarse.</p>
+      <p>Mi objetivo es que SALT sea el punto de partida de nuevas misiones análogas, colaboraciones internacionales y oportunidades para estudiantes bolivianos, en un lugar de enorme valor natural y cultural que merece ser investigado con respeto.</p>
+
+      <h2 class="sub">NASA HERC 2024: lo que aprendí en Huntsville</h2>
+      <figure class="single"><img src="img/nasa-herc.jpg" alt="Equipo VEMEC con la bandera de Bolivia frente al cohete Saturno V en Huntsville" style="aspect-ratio: 4 / 3; object-position: 50% 70%"><figcaption>Equipo VEMEC en el U.S. Space &amp; Rocket Center, Huntsville, abril de 2024.</figcaption></figure>
+      <p>Representar a Bolivia en el NASA Human Exploration Rover Challenge me enseñó que los logros importantes no son individuales. Los consiguen equipos capaces de adaptarse y encontrar soluciones cuando las condiciones son desfavorables. El segundo día mejoramos nuestro puntaje en 34 puntos, y eso nos valió el premio.</p>
+      <p>El proyecto no se quedó en la competencia. Como parte del reto, el equipo realizó actividades de divulgación STEM en Bolivia que llegaron a cerca de 6 000 niños y jóvenes, y esa experiencia se convirtió después en un artículo académico sobre educación STEM.</p>
+    </div>
+  </section>
+
+  <section id="investigacion">
+    <div class="side">Investigación</div>
+    <div class="main">
+      <h2>Proyectos</h2>
+      <div class="projects">
+        <article class="proj">
+          <div class="k">Nanosatélite</div>
+          <h3>WaskiriSat-1</h3>
+          <p>Primer nanosatélite boliviano. Integración y validación del firmware y las comunicaciones de la computadora de a bordo, e investigación sobre la carga útil.</p>
+          <div class="r">Miembro oficial · On-Board Computer</div>
+        </article>
+        <article class="proj">
+          <div class="k">Proyecto de grado</div>
+          <h3>Payload NINA</h3>
+          <p>Validación experimental de modelos de IA para clasificar imágenes satelitales RGB, con un banco óptico Hardware-in-the-Loop para el procesamiento a bordo.</p>
+          <div class="r">IEEE Aerospace Conference 2027</div>
+        </article>
+        <article class="proj">
+          <div class="k">Misión análoga</div>
+          <h3>SALT · RUMIPI</h3>
+          <p>Rover teleoperado operado desde el Salar de Uyuni durante la misión SEA I Thalassa de Southeast Analog.</p>
+          <div class="r">Investigadora principal</div>
+        </article>
+      </div>
+
+      <figure class="single"><img src="img/waskirisat.jpg" alt="Laura y compañeros del equipo CubeSat presentando el proyecto WaskiriSat junto a un banner" style="object-position: 50% 40%"><figcaption>Presentación del CubeSat boliviano con el equipo de WaskiriSat.</figcaption></figure>
+
+      <h2 class="sub">Publicaciones y conferencias</h2>
+      <ul class="plain">
+        <li>IEEE Aerospace Conference 2027 <span class="s">Autora · Validación óptica HIL de modelos de IA a bordo de nanosatélites · abstract aceptado, artículo completo en revisión</span></li>
+        <li>International Astronautical Congress (IAC) 2026 <span class="s">Coautora · Computadora de a bordo de WaskiriSat-1</span></li>
+        <li>9th South American Space Generation Workshop, Lima 2025 <span class="s">Delegada · grupos de trabajo de SGAC</span></li>
+        <li>Robótica, sistemas embebidos, diseño mecánico y educación STEM <span class="s">Coautora en trabajos vinculados a:</span>
+          <ul class="tags"><li>IEEE ISEC</li><li>LACCEI</li><li>ICoIAS</li><li>ICMRE</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="divulgacion">
+    <div class="side">Divulgación</div>
+    <div class="main">
+      <h2>Formar a la próxima generación</h2>
+      <div class="reach">
+        <div>
+          <div class="big">~6 000</div>
+          <div class="lbl">niños y jóvenes en Bolivia alcanzados con las actividades de divulgación STEM que realizamos como parte del NASA Human Exploration Rover Challenge.</div>
+        </div>
+        <figure style="margin:0"><img src="img/stem.jpg" alt="Laura con decenas de estudiantes en una actividad STEM"><figcaption>Actividad de divulgación STEM del equipo VEMEC con estudiantes escolares.</figcaption></figure>
+      </div>
+      <p>De esa experiencia surgió un artículo académico sobre educación STEM. Hoy continúo la divulgación y el trabajo comunitario desde los cargos que ocupo:</p>
+      <ul class="plain">
+        <li>Coordinadora general <span class="s">IEEE Aerospace and Electronic Systems Society (AESS), capítulo Bolivia</span></li>
+        <li>Vicepresidenta <span class="s">Sociedad Científica Estudiantil de Ingeniería Mecatrónica, UCB</span></li>
+        <li>Miembro activo <span class="s">Space Generation Advisory Council (SGAC)</span></li>
+        <li>Miembro oficial activa <span class="s">Proyecto WaskiriSat</span></li>
+      </ul>
+      <figure class="single" style="max-width: 400px"><img src="img/sgac-lima.jpg" alt="Laura expone las conclusiones de su grupo de trabajo en el 9th South American Space Generation Workshop en Lima" style="aspect-ratio: 4 / 5; object-position: 50% 30%"><figcaption>Exponiendo las conclusiones de mi grupo de trabajo en el 9th South American Space Generation Workshop, Lima 2025.</figcaption></figure>
+      <p>Para mí, liderar es transformar ideas en acciones, conectar personas, compartir conocimiento y construir oportunidades que sigan creciendo más allá de nuestra propia participación. Los jóvenes no necesitamos esperar a que las oportunidades lleguen a nuestro país. También podemos buscarlas, construirlas y abrir caminos para quienes vienen después.</p>
+    </div>
+  </section>
+
+  <section id="prensa">
+    <div class="side">Prensa</div>
+    <div class="main">
+      <h2>En los medios y enlaces</h2>
+      <ul class="press">
+        <li>
+          <a href="https://www.southeastanalog.org/mission" target="_blank" rel="noopener">Project 01: An Assessment of a Commercial Off-the-Shelf Rover for Planetary Analog Exploration</a><span class="badge">SALT</span>
+          <div class="src">Southeast Analog, misión SEA I Thalassa · Universidad Católica Boliviana · agosto de 2026</div>
+        </li>
+        <li>
+          <a href="https://lpz.ucb.edu.bo/el-equipo-de-vehiculos-mecatronicos-de-la-u-c-b-retorna-a-bolivia-con-el-premio-a-la-categoria-most-improved-award-otorgado-en-la-competencia-internacional-en-la-nasa/" target="_blank" rel="noopener">Equipo de la U.C.B. retorna a Bolivia con el premio “Most Improved Award” de la NASA</a><span class="badge">Mención</span>
+          <div class="src">Universidad Católica Boliviana, sede La Paz · abril de 2024</div>
+        </li>
+        <li>
+          <a href="https://www.lostiempos.com/doble-click/vida/20240505/most-improved-award-nasa-otorga-premio-equipo-boliviano-ucb" target="_blank" rel="noopener">“Most Improved Award”: la NASA otorga premio a equipo boliviano de la UCB</a><span class="badge">Mención</span>
+          <div class="src">Los Tiempos · mayo de 2024</div>
+        </li>
+        <li>
+          <a href="https://www.nasa.gov/news-release/nasa-announces-30th-human-exploration-rover-challenge-winners" target="_blank" rel="noopener">NASA Announces 30th Human Exploration Rover Challenge Winners</a>
+          <div class="src">NASA · abril de 2024</div>
+        </li>
+        <li>
+          <a href="https://brujuladigital.net/sociedad/2024/05/02/equipo-de-estudiantes-de-la-ucb-gana-un-premio-en-competencia-internacional-de-la-nasa-32822" target="_blank" rel="noopener">Equipo de estudiantes de la UCB gana un premio en competencia internacional de la NASA</a>
+          <div class="src">Brújula Digital · mayo de 2024</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <blockquote>Uno de los mayores logros del liderazgo no es solamente llegar más lejos, sino conseguir que más personas tengan la oportunidad de hacerlo.</blockquote>
+    <div class="sig">Laura Letizia Choque Mamani</div>
+  </footer>
+</div>
+
+</body>
+</html>
